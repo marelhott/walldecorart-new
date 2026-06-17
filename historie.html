@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historie — Wall Decor Art</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/sub.css" />
+  <style>
+    @media (min-width: 768px) {
+      .nav-links { display: flex !important; }
+      .menu-toggle { display: none !important; }
+    }
+    /* Timeline */
+    .timeline { position: relative; margin-top: 60px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 120px; top: 0; bottom: 0;
+      width: 1px; background: var(--c-border);
+    }
+    .tl-item { display: grid; grid-template-columns: 120px 1fr; gap: 48px; margin-bottom: 64px; position: relative; }
+    .tl-year {
+      font-family: var(--font); font-size: clamp(28px, 3vw, 40px); font-weight: 500;
+      letter-spacing: -0.03em; color: var(--c-text-2); line-height: 1;
+      text-align: right; padding-top: 4px;
+    }
+    .tl-item.highlight .tl-year { color: var(--c-text); }
+    .tl-dot {
+      position: absolute; left: 112px; top: 8px;
+      width: 17px; height: 17px; border-radius: 999px;
+      background: var(--c-bg); border: 1.5px solid var(--c-border);
+      z-index: 1;
+    }
+    .tl-item.highlight .tl-dot { background: var(--c-text); border-color: var(--c-text); }
+    .tl-content { padding-top: 0; }
+    .tl-content h3 { font-size: 20px; font-weight: 500; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .tl-content p { font-size: 15px; line-height: 1.7; color: var(--c-text-2); max-width: 600px; }
+    .tl-tag {
+      display: inline-block; font-family: var(--font-ui); font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.10em;
+      padding: 4px 10px; border-radius: 999px;
+      background: var(--c-bg); color: var(--c-text-2); border: 1px solid var(--c-border);
+      margin-bottom: 12px;
+    }
+    .tl-img { margin-top: 20px; border-radius: var(--r-card); overflow: hidden; aspect-ratio: 16/8; max-width: 560px; }
+
+    @media (max-width: 767px) {
+      .timeline::before { left: 0; }
+      .tl-item { grid-template-columns: 1fr; gap: 8px; padding-left: 20px; }
+      .tl-year { text-align: left; font-size: 22px; }
+      .tl-dot { left: -8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/wall-decor-art-logo-white.svg" alt="Wall Decor Art" /></a>
+    <nav class="nav-links">
+      <a href="index.html">Domů</a>
+      <span class="has-dropdown">
+        <a href="#" tabindex="0">Nabídka</a>
+        <div class="dropdown">
+          <a href="decor.html">Decor <span class="num">01</span></a>
+          <a href="malba.html">Malba <span class="num">02</span></a>
+          <a href="sterka.html">Stěrka <span class="num">03</span></a>
+          <a href="zlaceni.html">Zlacení <span class="num">04</span></a>
+        </div>
+      </span>
+      <a href="o-nas.html">O nás</a>
+      <a href="historie.html" class="active">Historie</a>
+      <a href="index.html#reference">Reference</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="index.html">Domů</a>
+  <div class="sub">
+    <a href="decor.html">Nabídka — Decor</a>
+    <a href="malba.html">Nabídka — Malba</a>
+    <a href="sterka.html">Nabídka — Stěrka</a>
+    <a href="zlaceni.html">Nabídka — Zlacení</a>
+  </div>
+  <a href="o-nas.html">O nás</a>
+  <a href="historie.html">Historie</a>
+  <a href="index.html#kontakt">Kontakt</a>
+</div>
+
+<!-- SUB HERO -->
+<section class="container sub-hero">
+  <div class="sub-crumb"><a href="index.html">Domů</a><span>/</span>Historie</div>
+  <h1 class="reveal">Tři dekády <em>řemesla.</em></h1>
+  <div class="sub-hero-lead reveal reveal-d1">
+    <p>Od prvního projektu v roce 1996 po mezinárodní realizace v hotelech a rezidencích — příběh studia Wall Decor Art je příběhem trpělivosti, preciznosti a neustálého hledání nových výrazových možností.</p>
+    <div class="sub-hero-meta">
+      <div class="sub-meta-item"><div class="lbl">První projekt</div><div class="val">1996, Brno</div></div>
+      <div class="sub-meta-item"><div class="lbl">První zahraničí</div><div class="val">2004, Budapest</div></div>
+      <div class="sub-meta-item"><div class="lbl">Dnes</div><div class="val">14 zemí světa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="container section">
+  <div class="timeline">
+
+    <div class="tl-item highlight reveal">
+      <div class="tl-year">1996</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Vznik studia</span>
+        <h3>Začátek — první štětec, první zeď</h3>
+        <p>Marek a Terezie zakládají studio v Brně. První zakázky jsou skromné — vápenné malby v privátních bytech a drobné dekorativní práce. Od začátku je jasné, že jde o více než řemeslo: každá zeď je příležitost k vyjádření.</p>
+        <div class="tl-img"><div class="ph photo"><img src="uploads/wda-original/3f2c576d942641d3a47da947bc83d420.jpeg" alt="Začátky studia a vápenné malby" loading="lazy" /></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">1999</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Expanze do Prahy</span>
+        <h3>Praha otevírá nové možnosti</h3>
+        <p>Studio rozšiřuje působnost do Prahy. První zakázky pro pražské kavárny a restaurace. Kontakt s mezinárodní designérskou komunitou přináší nové impulzy — první studijní cesta do Itálie a školení benátské stěrky.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2002</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Techniky &amp; vzdělávání</span>
+        <h3>Školení v Itálii a Francii</h3>
+        <p>Marek absolvuje intenzivní kurzy marmorino a stucco veneziano u italských mistrů ve Veroně. Terezie se školí ve Francii v technikách dekorativní malby a limewash. Obě techniky se stávají klíčovou součástí nabídky studia.</p>
+      </div>
+    </div>
+
+    <div class="tl-item highlight reveal">
+      <div class="tl-year">2004</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">První zahraniční projekt</span>
+        <h3>Hotel Andrássy, Budapest</h3>
+        <p>Klíčový mezník — realizace dekorativních omítek a zlacení v budapešťském hotelu Andrássy (Relais &amp; Châteaux). Projekt potvrzuje mezinárodní úroveň studia a otevírá dveře k dalším zahraničním zakázkám.</p>
+        <div class="tl-img"><div class="ph photo"><img src="uploads/wda-original/67230ae3e8df4021af236b4f6b0bcf20.png" alt="Hotelový interiér s dekorativní malbou" loading="lazy" /></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2007</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Toskánsko</span>
+        <h3>Rezidence ve Volterře</h3>
+        <p>Komplexní realizace v toskánském sídle — limewash, malby a dekorativní štuky v historické vilové rezidenci. Projekt trvá čtyři měsíce a stává se jednou z nejnáročnějších a nejprestižnějších zakázek do té doby.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2010</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Nizozemí</span>
+        <h3>Haag a Naarden-Bussum</h3>
+        <p>Série realizací v Nizozemí — privátní rezidence v Haagu a restaurování historických interiérů v Naarden-Bussum. První větší projekt se zahraničním architektem jako koordinátorem.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2014</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Graz &amp; Vídeň</span>
+        <h3>Rodinný dům v Grazu, první vídeňský hotel</h3>
+        <p>Rodinný dům v Grazu s komplexní realizací včetně microcentu, malby a zlacení detailů. Současně první zakázka pro vídeňský boutique hotel — lobby s velkoformátovou freskovou malbou.</p>
+        <div class="tl-img"><div class="ph photo"><img src="uploads/wda-original/91a7411871224d47bd19ebd2595d1144.png" alt="Boutique hotel s dekorativní realizací" loading="lazy" /></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2018</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Microcement</span>
+        <h3>Nová technika, nové trhy</h3>
+        <p>Studio zavádí microcement jako plnohodnotnou součást nabídky. Technika rychle získává na popularitě — zejména pro koupelny a kuchyně v moderních privátních interiérech. Počet zakázek roste o 40 % během dvou let.</p>
+      </div>
+    </div>
+
+    <div class="tl-item highlight reveal">
+      <div class="tl-year">2024</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <span class="tl-tag">Současnost</span>
+        <h3>Přes 70 projektů, 14 zemí</h3>
+        <p>Dnes Wall Decor Art realizuje zakázky po celé Evropě — od Česka přes Německo, Švýcarsko, Francii až po Pobaltí. Tým tvoří stálé jádro a síť ověřených spolupracovníků. Studio si zakládá na tom, že každou zakázku vede jeden ze zakladatelů osobně.</p>
+        <div class="tl-img"><div class="ph photo"><img src="uploads/wda-original/791494a1684e47549ad3ad97582036f1.jpg" alt="Současná realizace Wall Decor Art" loading="lazy" /></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="container" style="padding-bottom:80px;">
+  <div class="cta-banner reveal">
+    <h3>Napište část své vlastní <em>historie s námi.</em></h3>
+    <a href="index.html#kontakt" class="btn">Domluvit konzultaci <span class="arrow"></span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><img class="logo" src="assets/wall-decor-art-logo-white.svg" alt="Wall Decor Art" /><p class="footer-blurb">Rodinné studio dekorativních povrchů. Mezinárodní projekty v residenčním i komerčním sektoru. Od roku 1996.</p></div>
+      <div class="footer-col"><h4>Stránky</h4><ul><li><a href="index.html">Domů</a></li><li><a href="o-nas.html">O nás</a></li><li><a href="historie.html">Historie</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Nabídka</h4><ul><li><a href="decor.html">Decor</a></li><li><a href="malba.html">Malba</a></li><li><a href="sterka.html">Stěrka</a></li><li><a href="zlaceni.html">Zlacení</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+420732333550">+420 732 333 550</a></li><li><a href="mailto:mailhospodarsky@gmail.com">mailhospodarsky@gmail.com</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 1996–2026 Wall Decor Art — Všechna práva vyhrazena.</div><div>Marek &amp; Terezie · Praha · Brno</div></div>
+  </div>
+</footer>
+<script src="scripts/site.js"></script>
+</body>
+</html>

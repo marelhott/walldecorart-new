@@ -1,0 +1,418 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Wall Decor Art — domů" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "Wall Decor Art" [ref=e5]
+      - button "Menu" [ref=e7] [cursor=pointer]
+  - generic [ref=e11]:
+    - link "Domů" [ref=e12] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=e13]:
+      - link "Nabídka — Decor" [ref=e14] [cursor=pointer]:
+        - /url: decor.html
+      - link "Nabídka — Malba" [ref=e15] [cursor=pointer]:
+        - /url: malba.html
+      - link "Nabídka — Stěrka" [ref=e16] [cursor=pointer]:
+        - /url: sterka.html
+      - link "Nabídka — Zlacení" [ref=e17] [cursor=pointer]:
+        - /url: zlaceni.html
+    - link "O nás" [ref=e18] [cursor=pointer]:
+      - /url: o-nas.html
+    - link "Historie" [ref=e19] [cursor=pointer]:
+      - /url: historie.html
+    - link "Kontakt" [ref=e20] [cursor=pointer]:
+      - /url: "#kontakt"
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e25]: Wall Decor Art · od roku 1996
+      - heading "Stěny jako umělecké dílo." [level=1] [ref=e27]:
+        - text: Stěny jako
+        - emphasis [ref=e28]: umělecké dílo.
+      - paragraph [ref=e29]: Rodinné studio s mezinárodními projekty. Specializujeme se na dekorativní stěrky, ruční malbu, microcement a zlacení — řemeslné techniky propojené se současným designem interiérů.
+      - generic [ref=e30]:
+        - link "Naše techniky" [ref=e31] [cursor=pointer]:
+          - /url: "#sluzby"
+          - text: Naše techniky
+        - link "Domluvit konzultaci" [ref=e33] [cursor=pointer]:
+          - /url: "#kontakt"
+    - generic [ref=e34]:
+      - generic [ref=e36]: Hero · interiér
+      - generic [ref=e38]:
+        - generic [ref=e39]: 0+
+        - generic [ref=e40]: let zkušeností
+  - generic [ref=e41]:
+    - heading "Rodinné studio s mezinárodními projekty" [level=2] [ref=e43]:
+      - text: Rodinné studio s
+      - emphasis [ref=e44]: mezinárodními
+      - text: projekty
+    - paragraph [ref=e45]: K realizaci interiéru přistupujeme stejně jako k uměleckému dílu. Kreativita a důvtipná praktičnost jsou dvěma hlavními pilíři naší práce. Zároveň máme na paměti, že i s malou investicí může skvělý nápad proměnit váš prostor v zajímavé místo k životu. Administrativní a kreativní jádro firmy tvoří Marek a Terezie — dva lidé, kteří za každým projektem stojí od první konzultace po předání hotové realizace.
+  - generic [ref=e48]:
+    - generic [ref=e51]: Praha
+    - generic [ref=e54]: Vídeň
+    - generic [ref=e57]: Mnichov
+    - generic [ref=e60]: Brno
+    - generic [ref=e63]: Budapešť
+    - generic [ref=e66]: Toskánsko
+    - generic [ref=e69]: Praha
+    - generic [ref=e72]: Vídeň
+    - generic [ref=e75]: Mnichov
+    - generic [ref=e78]: Brno
+    - generic [ref=e81]: Budapešť
+    - generic [ref=e84]: Toskánsko
+  - generic [ref=e86]:
+    - generic [ref=e87]:
+      - generic [ref=e88]: "0"
+      - generic [ref=e89]: Let zkušeností
+      - generic [ref=e90]: Ručně provedených povrchů od založení v roce 1996.
+    - generic [ref=e91]:
+      - generic [ref=e92]: 0+
+      - generic [ref=e93]: Realizovaných projektů
+      - generic [ref=e94]: Privátní rezidence, hotely a komerční interiéry.
+    - generic [ref=e95]:
+      - generic [ref=e96]: "0"
+      - generic [ref=e97]: Zemí, kde pracujeme
+      - generic [ref=e98]: Česko, Rakousko, Německo, Francie, Itálie a další.
+    - generic [ref=e99]:
+      - generic [ref=e100]: 0%
+      - generic [ref=e101]: Doporučených klientů
+      - generic [ref=e102]: Většina nových zakázek vzniká z osobních referencí.
+  - generic [ref=e104]:
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]: Co umíme
+        - heading "Čtyři techniky, jeden výsledek." [level=2] [ref=e109]:
+          - text: Čtyři techniky, jeden
+          - emphasis [ref=e110]: výsledek
+          - text: .
+      - generic [ref=e111] [cursor=pointer]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: "01"
+          - generic [ref=e114]: Decor
+          - generic [ref=e115]: +
+        - generic [ref=e116]:
+          - text: Autorské motivy, freskové techniky a velkoformátové malby. Pro reprezentativní prostory, kde má stěna vyprávět příběh.
+          - link "Zobrazit techniku" [ref=e117]:
+            - /url: decor.html
+            - text: Zobrazit techniku
+      - generic [ref=e119] [cursor=pointer]:
+        - generic [ref=e120]:
+          - generic [ref=e121]: "02"
+          - generic [ref=e122]: Malba
+          - generic [ref=e123]: +
+        - generic:
+          - text: Vrstvené malby s ručním škrábáním a vymýváním. Měkké přechody, hloubka a přirozený charakter povrchu.
+          - link "Zobrazit techniku" [ref=e124]:
+            - /url: malba.html
+            - text: Zobrazit techniku
+      - generic [ref=e126] [cursor=pointer]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: "03"
+          - generic [ref=e129]: Stěrka
+          - generic [ref=e130]: +
+        - generic:
+          - text: Bezspárové povrchy pro stěny i podlahy. Microcement do koupelen, marmorino a stucco veneziano do obytných prostor.
+          - link "Zobrazit techniku" [ref=e131]:
+            - /url: sterka.html
+            - text: Zobrazit techniku
+      - generic [ref=e133] [cursor=pointer]:
+        - generic [ref=e134]:
+          - generic [ref=e135]: "04"
+          - generic [ref=e136]: Zlacení
+          - generic [ref=e137]: +
+        - generic:
+          - text: Ruční zlacení rámů, štuků a celých ploch. Pravé plátkové zlato, měď a stříbro — restaurátorská preciznost.
+          - link "Zobrazit techniku" [ref=e138]:
+            - /url: zlaceni.html
+            - text: Zobrazit techniku
+    - generic [ref=e141]:
+      - generic [ref=e143]: Decor
+      - generic [ref=e145]: Malba
+      - generic [ref=e147]: Stěrka
+      - generic [ref=e149]: Zlacení
+  - generic [ref=e150]:
+    - generic [ref=e151]:
+      - generic [ref=e152]: Reference
+      - heading "Inspirujte se naší prací." [level=2] [ref=e154]:
+        - text: Inspirujte se naší
+        - emphasis [ref=e155]: prací
+        - text: .
+      - paragraph [ref=e156]: Vybrané realizace — od privátních rezidencí po butikové hotely.
+    - article [ref=e157]:
+      - generic [ref=e160]: Rezidence · Praha
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - generic [ref=e164]: Microcement
+            - generic [ref=e165]: Obývací část
+          - heading "Bezspárová stěrka v rezidenci na Smíchově" [level=3] [ref=e166]
+          - paragraph [ref=e167]: Souvislý microcementový povrch propojuje obývací prostor s kuchyní. Pigmentován do tlumeného pískového tónu, který reaguje na denní světlo.
+        - paragraph [ref=e168]: „Tým zvládl náročnou benátskou stěrku bez jediného problému. Výsledek nad očekávání."
+        - generic [ref=e172]:
+          - generic [ref=e173]: M. Horáková
+          - generic [ref=e174]: Architektka projektu
+    - article [ref=e175]:
+      - generic [ref=e178]: Hotel · Vídeň
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - generic [ref=e182]: Decor
+            - generic [ref=e183]: Freska
+            - generic [ref=e184]: Lobby
+          - heading "Autorská freska v lobby butikového hotelu" [level=3] [ref=e185]
+          - paragraph [ref=e186]: Velkoformátová ruční malba ve třech vrstvách pigmentovaného vápna na 28 m². Zakázka pro hotelovou skupinu ve Vídni.
+        - paragraph [ref=e187]: „Spolupráce na hotelovém projektu byla profesionální od první konzultace."
+        - generic [ref=e191]:
+          - generic [ref=e192]: A. Fischer
+          - generic [ref=e193]: Designer projektu
+    - article [ref=e194]:
+      - generic [ref=e197]: Rezidence · Toskánsko
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - generic [ref=e201]: Limewash
+            - generic [ref=e202]: Ložnice
+          - heading "Vápenná malba v rezidenci ve Volterře" [level=3] [ref=e203]
+          - paragraph [ref=e204]: Limewash v jemném zemitém odstínu pokrývá tři místnosti. Měkké přechody dotvářejí atmosféru toskánského domu.
+        - paragraph [ref=e205]: „Povrch mění tón podle denního světla — je to malý zázrak."
+        - generic [ref=e209]:
+          - generic [ref=e210]: J. Procházka
+          - generic [ref=e211]: Investor
+  - generic [ref=e212]:
+    - generic [ref=e214]:
+      - generic [ref=e215]: Ohlasy klientů
+      - heading "Co o nás říkají." [level=2] [ref=e217]
+      - paragraph [ref=e218]: Reference klientů, kteří si nechali některou z technik realizovat doma nebo v komerčním prostoru.
+    - generic [ref=e219]:
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - generic [ref=e223]: ★★★★★
+            - paragraph [ref=e224]: „Tým Wall Decor Art zvládl náročnou benátskou stěrku v ložnici i koupelně bez jediného problému. Komunikace na úrovni, výsledek nad očekávání."
+            - generic [ref=e228]:
+              - generic [ref=e229]: Eva Nováková
+              - generic [ref=e230]: Google · Praha
+          - generic [ref=e231]:
+            - generic [ref=e232]: ★★★★★
+            - paragraph [ref=e233]: „Microcement v podkroví — nečekal jsem, že povrch dokáže vypadat tak živě. Stěna mění tón podle denního světla."
+            - generic [ref=e237]:
+              - generic [ref=e238]: Tomáš Černý
+              - generic [ref=e239]: Firmy.cz · Brno
+          - generic [ref=e240]:
+            - generic [ref=e241]: ★★★★★
+            - paragraph [ref=e242]: „Ruční malbu motivu pro reprezentační schodiště provedli s neuvěřitelnou trpělivostí. Výsledek vydrží generace."
+            - generic [ref=e246]:
+              - generic [ref=e247]: Markéta Linhartová
+              - generic [ref=e248]: Facebook · Vídeň
+          - generic [ref=e249]:
+            - generic [ref=e250]: ★★★★★
+            - paragraph [ref=e251]: „Spolupráce na hotelovém projektu byla profesionální od první konzultace. Termíny dodrželi a výsledek mluví sám za sebe."
+            - generic [ref=e255]:
+              - generic [ref=e256]: A. Fischer
+              - generic [ref=e257]: Google · Vídeň
+          - generic [ref=e258]:
+            - generic [ref=e259]: ★★★★★
+            - paragraph [ref=e260]: „Zlacení rámů zrcadel a štukových říms v salonu. Restaurátorský přístup, žádné kompromisy. Doporučuji bez výhrad."
+            - generic [ref=e264]:
+              - generic [ref=e265]: P. Rybář
+              - generic [ref=e266]: Google · Karlovy Vary
+          - generic [ref=e267]:
+            - generic [ref=e268]: ★★★★★
+            - paragraph [ref=e269]: „Tým Wall Decor Art zvládl náročnou benátskou stěrku v ložnici i koupelně bez jediného problému. Komunikace na úrovni, výsledek nad očekávání."
+            - generic [ref=e273]:
+              - generic [ref=e274]: Eva Nováková
+              - generic [ref=e275]: Google · Praha
+          - generic [ref=e276]:
+            - generic [ref=e277]: ★★★★★
+            - paragraph [ref=e278]: „Microcement v podkroví — nečekal jsem, že povrch dokáže vypadat tak živě. Stěna mění tón podle denního světla."
+            - generic [ref=e282]:
+              - generic [ref=e283]: Tomáš Černý
+              - generic [ref=e284]: Firmy.cz · Brno
+          - generic [ref=e285]:
+            - generic [ref=e286]: ★★★★★
+            - paragraph [ref=e287]: „Ruční malbu motivu pro reprezentační schodiště provedli s neuvěřitelnou trpělivostí. Výsledek vydrží generace."
+            - generic [ref=e291]:
+              - generic [ref=e292]: Markéta Linhartová
+              - generic [ref=e293]: Facebook · Vídeň
+          - generic [ref=e294]:
+            - generic [ref=e295]: ★★★★★
+            - paragraph [ref=e296]: „Spolupráce na hotelovém projektu byla profesionální od první konzultace. Termíny dodrželi a výsledek mluví sám za sebe."
+            - generic [ref=e300]:
+              - generic [ref=e301]: A. Fischer
+              - generic [ref=e302]: Google · Vídeň
+          - generic [ref=e303]:
+            - generic [ref=e304]: ★★★★★
+            - paragraph [ref=e305]: „Zlacení rámů zrcadel a štukových říms v salonu. Restaurátorský přístup, žádné kompromisy. Doporučuji bez výhrad."
+            - generic [ref=e309]:
+              - generic [ref=e310]: P. Rybář
+              - generic [ref=e311]: Google · Karlovy Vary
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e314]: ★★★★★
+            - paragraph [ref=e315]: „Realizace v Grazu proběhla hladce navzdory vzdálenosti. Skvělá organizace, výsledek překonal moje očekávání."
+            - generic [ref=e319]:
+              - generic [ref=e320]: Klaus Berger
+              - generic [ref=e321]: Google · Graz
+          - generic [ref=e322]:
+            - generic [ref=e323]: ★★★★★
+            - paragraph [ref=e324]: „Stucco veneziano v obývacím pokoji je naprostá paráda. Každý návštěvník se ptá, kde jsme to nechali dělat."
+            - generic [ref=e328]:
+              - generic [ref=e329]: Jana Kopecká
+              - generic [ref=e330]: Firmy.cz · Praha
+          - generic [ref=e331]:
+            - generic [ref=e332]: ★★★★★
+            - paragraph [ref=e333]: „Pracují jako skuteční umělci. Freska v jídelně je doslova jako ze starého italského paláce."
+            - generic [ref=e337]:
+              - generic [ref=e338]: Ondřej Vávra
+              - generic [ref=e339]: Google · Brno
+          - generic [ref=e340]:
+            - generic [ref=e341]: ★★★★★
+            - paragraph [ref=e342]: „Plátkové zlato na štuky v předsíni — detail, který posunul celý interiér na jinou úroveň."
+            - generic [ref=e346]:
+              - generic [ref=e347]: Petra Houšková
+              - generic [ref=e348]: Facebook · Praha
+          - generic [ref=e349]:
+            - generic [ref=e350]: ★★★★★
+            - paragraph [ref=e351]: „Naprosto profesionální přístup. Doporučila jsem Wall Decor Art třem přátelům a všichni byli spokojení."
+            - generic [ref=e355]:
+              - generic [ref=e356]: Lucie Marková
+              - generic [ref=e357]: Google · Praha
+          - generic [ref=e358]:
+            - generic [ref=e359]: ★★★★★
+            - paragraph [ref=e360]: „Realizace v Grazu proběhla hladce navzdory vzdálenosti. Skvělá organizace, výsledek překonal moje očekávání."
+            - generic [ref=e364]:
+              - generic [ref=e365]: Klaus Berger
+              - generic [ref=e366]: Google · Graz
+          - generic [ref=e367]:
+            - generic [ref=e368]: ★★★★★
+            - paragraph [ref=e369]: „Stucco veneziano v obývacím pokoji je naprostá paráda. Každý návštěvník se ptá, kde jsme to nechali dělat."
+            - generic [ref=e373]:
+              - generic [ref=e374]: Jana Kopecká
+              - generic [ref=e375]: Firmy.cz · Praha
+          - generic [ref=e376]:
+            - generic [ref=e377]: ★★★★★
+            - paragraph [ref=e378]: „Pracují jako skuteční umělci. Freska v jídelně je doslova jako ze starého italského paláce."
+            - generic [ref=e382]:
+              - generic [ref=e383]: Ondřej Vávra
+              - generic [ref=e384]: Google · Brno
+          - generic [ref=e385]:
+            - generic [ref=e386]: ★★★★★
+            - paragraph [ref=e387]: „Plátkové zlato na štuky v předsíni — detail, který posunul celý interiér na jinou úroveň."
+            - generic [ref=e391]:
+              - generic [ref=e392]: Petra Houšková
+              - generic [ref=e393]: Facebook · Praha
+          - generic [ref=e394]:
+            - generic [ref=e395]: ★★★★★
+            - paragraph [ref=e396]: „Naprosto profesionální přístup. Doporučila jsem Wall Decor Art třem přátelům a všichni byli spokojení."
+            - generic [ref=e400]:
+              - generic [ref=e401]: Lucie Marková
+              - generic [ref=e402]: Google · Praha
+      - generic [ref=e404]:
+        - link "★★★★★ Recenze na Google" [ref=e405] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e406]: ★★★★★
+          - text: Recenze na Google
+        - link "★★★★★ Firmy.cz" [ref=e407] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e408]: ★★★★★
+          - text: Firmy.cz
+        - link "★★★★★ Facebook" [ref=e409] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e410]: ★★★★★
+          - text: Facebook
+  - generic [ref=e412]:
+    - generic [ref=e413]:
+      - generic [ref=e414]: Otázky a odpovědi
+      - heading "Nejčastější dotazy." [level=2] [ref=e416]:
+        - text: Nejčastější
+        - emphasis [ref=e417]: dotazy
+        - text: .
+      - paragraph [ref=e418]: Nenašli jste odpověď? Napište nám — odpovídáme do 24 hodin.
+    - generic [ref=e419]:
+      - group [ref=e420]:
+        - generic "Jak probíhá první konzultace?" [ref=e421] [cursor=pointer]: Jak probíhá první konzultace?
+      - group [ref=e423]:
+        - generic "Kolik stojí realizace stěny?" [ref=e424] [cursor=pointer]: Kolik stojí realizace stěny?
+      - group [ref=e426]:
+        - generic "Vystavujete záruku na provedené práce?" [ref=e427] [cursor=pointer]: Vystavujete záruku na provedené práce?
+      - group [ref=e429]:
+        - generic "Pracujete i mimo Českou republiku?" [ref=e430] [cursor=pointer]: Pracujete i mimo Českou republiku?
+      - group [ref=e432]:
+        - generic "Jak dlouho trvá realizace?" [ref=e433] [cursor=pointer]: Jak dlouho trvá realizace?
+      - group [ref=e435]:
+        - generic "Mohu povrch později opravit nebo přebarvit?" [ref=e436] [cursor=pointer]: Mohu povrch později opravit nebo přebarvit?
+  - generic [ref=e439]:
+    - generic [ref=e440]:
+      - generic [ref=e441]: Kontakt
+      - heading "Pojďme si o vašem projektu promluvit." [level=2] [ref=e442]
+      - paragraph [ref=e443]: Napište nám pár vět o tom, co plánujete. Ozveme se zpravidla do 24 hodin.
+      - generic [ref=e444]:
+        - generic [ref=e445]:
+          - generic [ref=e446]: Tým
+          - generic [ref=e447]: Marek & Terezie · Wall Decor Art
+        - generic [ref=e448]:
+          - generic [ref=e449]: Telefon
+          - generic [ref=e450]: +420 732 333 550
+        - generic [ref=e451]:
+          - generic [ref=e452]: E-mail
+          - generic [ref=e453]: mailhospodarsky@gmail.com
+    - generic [ref=e454]:
+      - textbox "Vaše jméno" [ref=e455]
+      - textbox "E-mail" [ref=e456]
+      - textbox "Telefon (volitelné)" [ref=e457]
+      - textbox "Krátký popis projektu — místo, plocha, představa…" [ref=e458]
+      - button "Odeslat poptávku" [ref=e459] [cursor=pointer]
+  - contentinfo [ref=e460]:
+    - generic [ref=e461]:
+      - generic [ref=e462]:
+        - generic [ref=e463]:
+          - img "Wall Decor Art" [ref=e464]
+          - paragraph [ref=e465]: Rodinné studio dekorativních povrchů. Mezinárodní projekty v residenčním i komerčním sektoru. Od roku 1996.
+        - generic [ref=e466]:
+          - heading "Stránky" [level=4] [ref=e467]
+          - list [ref=e468]:
+            - listitem [ref=e469]:
+              - link "Domů" [ref=e470] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=e471]:
+              - link "O nás" [ref=e472] [cursor=pointer]:
+                - /url: o-nas.html
+            - listitem [ref=e473]:
+              - link "Historie" [ref=e474] [cursor=pointer]:
+                - /url: historie.html
+            - listitem [ref=e475]:
+              - link "Kontakt" [ref=e476] [cursor=pointer]:
+                - /url: "#kontakt"
+        - generic [ref=e477]:
+          - heading "Nabídka" [level=4] [ref=e478]
+          - list [ref=e479]:
+            - listitem [ref=e480]:
+              - link "Decor" [ref=e481] [cursor=pointer]:
+                - /url: decor.html
+            - listitem [ref=e482]:
+              - link "Malba" [ref=e483] [cursor=pointer]:
+                - /url: malba.html
+            - listitem [ref=e484]:
+              - link "Stěrka" [ref=e485] [cursor=pointer]:
+                - /url: sterka.html
+            - listitem [ref=e486]:
+              - link "Zlacení" [ref=e487] [cursor=pointer]:
+                - /url: zlaceni.html
+        - generic [ref=e488]:
+          - heading "Kontakt" [level=4] [ref=e489]
+          - list [ref=e490]:
+            - listitem [ref=e491]:
+              - link "+420 732 333 550" [ref=e492] [cursor=pointer]:
+                - /url: tel:+420732333550
+            - listitem [ref=e493]:
+              - link "mailhospodarsky@gmail.com" [ref=e494] [cursor=pointer]:
+                - /url: mailto:mailhospodarsky@gmail.com
+            - listitem [ref=e495]:
+              - link "Instagram" [ref=e496] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e497]:
+              - link "Facebook" [ref=e498] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e499]:
+        - generic [ref=e500]: © 1996–2026 Wall Decor Art — Všechna práva vyhrazena.
+        - generic [ref=e501]: Marek & Terezie · Praha · Brno

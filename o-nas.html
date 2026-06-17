@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O nás — Wall Decor Art</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/sub.css" />
+  <style>
+    @media (min-width: 768px) {
+      .nav-links { display: flex !important; }
+      .menu-toggle { display: none !important; }
+    }
+    /* Team grid */
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .team-card { background: #fff; border: 1px solid var(--c-border); border-radius: var(--r-card); overflow: hidden; transition: box-shadow .3s, transform .3s; }
+    .team-card:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+    .team-photo { aspect-ratio: 4/3; background: #d0c8b5; }
+    .team-body { padding: 28px; }
+    .team-body h3 { font-size: 22px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .team-body .role { font-family: var(--font-ui); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-accent); margin-bottom: 16px; }
+    .team-body p { font-size: 15px; line-height: 1.65; color: var(--c-text-2); }
+    @media (max-width: 767px) { .team-grid { grid-template-columns: 1fr; } }
+
+    /* Values grid */
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .value-card { background: #fff; border: 1px solid var(--c-border); border-radius: var(--r-card); padding: 32px; }
+    .value-card .n { font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 16px; }
+    .value-card h4 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
+    .value-card p { font-size: 14px; line-height: 1.65; color: var(--c-text-2); }
+    @media (max-width: 1023px) { .values-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .values-grid { grid-template-columns: 1fr; } }
+
+    /* Stats row */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--c-border); border-radius: var(--r-card); overflow: hidden; margin-top: 48px; }
+    .stat-item { padding: 36px 28px; text-align: center; border-right: 1px solid var(--c-border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: clamp(36px, 4vw, 56px); font-weight: 500; letter-spacing: -0.04em; color: var(--c-text); line-height: 1; }
+    .stat-lbl { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-text-2); margin-top: 10px; }
+    @media (max-width: 767px) { .stats-row { grid-template-columns: 1fr 1fr; } .stat-item:nth-child(2) { border-right: none; } .stat-item { border-bottom: 1px solid var(--c-border); } }
+
+    /* Partners marquee */
+    .partners-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
+    .partner-tag { font-family: var(--font-ui); font-size: 13px; padding: 8px 18px; border: 1px solid var(--c-border); border-radius: 999px; color: var(--c-text-2); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html"><img class="logo" src="assets/wall-decor-art-logo-white.svg" alt="Wall Decor Art" /></a>
+    <nav class="nav-links">
+      <a href="index.html">Domů</a>
+      <span class="has-dropdown">
+        <a href="#" tabindex="0">Nabídka</a>
+        <div class="dropdown">
+          <a href="decor.html">Decor <span class="num">01</span></a>
+          <a href="malba.html">Malba <span class="num">02</span></a>
+          <a href="sterka.html">Stěrka <span class="num">03</span></a>
+          <a href="zlaceni.html">Zlacení <span class="num">04</span></a>
+        </div>
+      </span>
+      <a href="o-nas.html" class="active">O nás</a>
+      <a href="historie.html">Historie</a>
+      <a href="index.html#reference">Reference</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="index.html">Domů</a>
+  <div class="sub">
+    <a href="decor.html">Nabídka — Decor</a>
+    <a href="malba.html">Nabídka — Malba</a>
+    <a href="sterka.html">Nabídka — Stěrka</a>
+    <a href="zlaceni.html">Nabídka — Zlacení</a>
+  </div>
+  <a href="o-nas.html">O nás</a>
+  <a href="historie.html">Historie</a>
+  <a href="index.html#kontakt">Kontakt</a>
+</div>
+
+<!-- SUB HERO -->
+<section class="container sub-hero">
+  <div class="sub-crumb"><a href="index.html">Domů</a><span>/</span>O nás</div>
+  <h1 class="reveal">Jsme Wall <em>Decor Art.</em></h1>
+  <div class="sub-hero-lead reveal reveal-d1">
+    <p>K realizaci interiéru přistupujeme stejně jako k uměleckému dílu. Kreativita a důvtipná praktičnost jsou dvěma hlavními pilíři naší práce. Věříme, že i s malou investicí může skvělý nápad proměnit prostor v zajímavé místo k životu.</p>
+    <div class="sub-hero-meta">
+      <div class="sub-meta-item"><div class="lbl">Rok vzniku</div><div class="val">1996</div></div>
+      <div class="sub-meta-item"><div class="lbl">Sídlo</div><div class="val">Praha &amp; Brno</div></div>
+      <div class="sub-meta-item"><div class="lbl">Zakladatelé</div><div class="val">Marek &amp; Terezie</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="container gallery-section">
+  <div class="stats-row reveal">
+    <div class="stat-item"><div class="stat-num"><span data-count="29">0</span></div><div class="stat-lbl">Let zkušeností</div></div>
+    <div class="stat-item"><div class="stat-num"><span data-count="70">0</span>+</div><div class="stat-lbl">Realizovaných projektů</div></div>
+    <div class="stat-item"><div class="stat-num"><span data-count="14">0</span></div><div class="stat-lbl">Zemí</div></div>
+    <div class="stat-item"><div class="stat-num"><span data-count="100">0</span>%</div><div class="stat-lbl">Doporučení</div></div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT — O STUDIU -->
+<section class="container">
+  <div class="highlight reveal">
+    <div class="hl-img"><div class="ph photo"><img src="uploads/wda-original/097b671aaacd43339fc8058651df94f8.jpg" alt="Interiér realizovaný studiem Wall Decor Art" loading="lazy" /></div></div>
+    <div class="hl-text">
+      <span class="pill"><span class="dot"></span>Naše studio</span>
+      <h2>Umění v každém <em>povrchu.</em></h2>
+      <p>Naše společnost byla založena v roce 1996 a od té doby působí s kratšími či delšími přestávkami ve stejném složení. Administrativní a kreativní jádro firmy tvoří dva lidé — Marek a Terezie. Každý z nás se věnuje i vlastní tvorbě a každý prostor, který jsme společně vytvořili, je do jisté míry uměleckým dílem.</p>
+      <p>Spolupracujeme s externími specialisty — jeden je odborníkem na nástěnné umění, druhý specialistou na štuky, třetí na restaurování. Dohromady tvoříme tým, který zvládne jakýkoli projekt od intimního bytu po hotel s desítkami místností.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TÝM -->
+<section class="container gallery-section">
+  <div class="gallery-head reveal">
+    <div>
+      <span class="pill"><span class="dot"></span>Lidé</span>
+      <h2 style="margin-top:14px">Tým za každým <em>projektem.</em></h2>
+    </div>
+    <p>Každý projekt vede Marek nebo Terezie osobně. Žádné přeposílání na subdodavatele — pracujeme sami nebo s ověřenými spolupracovníky.</p>
+  </div>
+  <div class="team-grid reveal reveal-d1">
+    <div class="team-card">
+      <div class="team-photo"><div class="ph photo"><img src="uploads/wda-original/7b8f8b3046ea427e882a7dad15424014.jpg" alt="Ukázka práce Marka Hospodářského" loading="lazy" /></div></div>
+      <div class="team-body">
+        <h3>Marek Hospodářský</h3>
+        <div class="role">Zakladatel &amp; hlavní realizátor</div>
+        <p>Specialista na stěrkové techniky, microcement a restaurátorské práce. Přes 29 let praxe v realizaci dekorativních povrchů v ČR i zahraničí. Vede každý projekt od konzultace po předání.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo"><div class="ph photo"><img src="uploads/wda-original/14e4fd271f3542db9e583f0b2a8b97de.jpg" alt="Ukázka kreativní práce studia" loading="lazy" /></div></div>
+      <div class="team-body">
+        <h3>Terezie</h3>
+        <div class="role">Spoluzakladatelka &amp; kreativní ředitelka</div>
+        <p>Odpovídá za kreativní koncepci projektů, výběr barev a materiálů. Spolupracuje s architekty a interiérovými designéry. Věnuje se také vlastní výtvarné tvorbě.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HODNOTY -->
+<section class="container gallery-section">
+  <div class="gallery-head reveal">
+    <div>
+      <span class="pill"><span class="dot"></span>Co nás definuje</span>
+      <h2 style="margin-top:14px">Tři pilíře naší <em>práce.</em></h2>
+    </div>
+    <p>Každý projekt stojí na stejných základech — bez ohledu na to, zda jde o malý byt nebo hotel s mezinárodním renomé.</p>
+  </div>
+  <div class="values-grid reveal reveal-d1">
+    <div class="value-card">
+      <div class="n">Pilíř 01</div>
+      <h4>Autorský přístup</h4>
+      <p>Každý povrch navrhujeme přímo pro daný prostor. Nikdy nekopírujeme — vždy hledáme řešení, které sedí konkrétnímu místu, světlu a charakteru klienta.</p>
+    </div>
+    <div class="value-card">
+      <div class="n">Pilíř 02</div>
+      <h4>Evropská tradice</h4>
+      <p>Naše techniky vychází z italské, francouzské a benátské řemeslné tradice. Pravidelně se školíme u evropských mistrů a sledujeme vývoj materiálů a postupů.</p>
+    </div>
+    <div class="value-card">
+      <div class="n">Pilíř 03</div>
+      <h4>Moderní materiály</h4>
+      <p>Tradiční estetiku kombinujeme s moderními materiály odolnými každodennímu provozu. Výsledek vypadá klasicky, ale slouží desetiletí bez kompromisů.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNEŘI -->
+<section class="container gallery-section">
+  <div class="gallery-head reveal">
+    <div>
+      <span class="pill"><span class="dot"></span>Spolupráce</span>
+      <h2 style="margin-top:14px">S kým <em>pracujeme.</em></h2>
+    </div>
+    <p>Spolupracujeme s architekty, interiérovými designéry a přímými investory. Vítáme zakázky od jedné místnosti po kompletní realizace.</p>
+  </div>
+  <div class="partners-row reveal reveal-d1">
+    <span class="partner-tag">Privátní rezidence</span>
+    <span class="partner-tag">Butikové hotely</span>
+    <span class="partner-tag">Kavárny &amp; restaurace</span>
+    <span class="partner-tag">Komerční interiéry</span>
+    <span class="partner-tag">Architektonická studia</span>
+    <span class="partner-tag">Designéři</span>
+    <span class="partner-tag">Developeři</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="container">
+  <div class="cta-banner reveal">
+    <h3>Chcete poznat nás <em>osobně?</em></h3>
+    <a href="index.html#kontakt" class="btn">Domluvit konzultaci <span class="arrow"></span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><img class="logo" src="assets/wall-decor-art-logo-white.svg" alt="Wall Decor Art" /><p class="footer-blurb">Rodinné studio dekorativních povrchů. Mezinárodní projekty v residenčním i komerčním sektoru. Od roku 1996.</p></div>
+      <div class="footer-col"><h4>Stránky</h4><ul><li><a href="index.html">Domů</a></li><li><a href="o-nas.html">O nás</a></li><li><a href="historie.html">Historie</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Nabídka</h4><ul><li><a href="decor.html">Decor</a></li><li><a href="malba.html">Malba</a></li><li><a href="sterka.html">Stěrka</a></li><li><a href="zlaceni.html">Zlacení</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+420732333550">+420 732 333 550</a></li><li><a href="mailto:mailhospodarsky@gmail.com">mailhospodarsky@gmail.com</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 1996–2026 Wall Decor Art — Všechna práva vyhrazena.</div><div>Marek &amp; Terezie · Praha · Brno</div></div>
+  </div>
+</footer>
+<script src="scripts/site.js"></script>
+</body>
+</html>

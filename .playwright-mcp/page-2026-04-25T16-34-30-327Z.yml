@@ -1,0 +1,206 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Wall Decor Art" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "Wall Decor Art" [ref=e5]
+      - button "Menu" [ref=e7] [cursor=pointer]
+  - generic [ref=e11]:
+    - link "Domů" [ref=e12] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=e13]:
+      - link "Nabídka — Decor" [ref=e14] [cursor=pointer]:
+        - /url: decor.html
+      - link "Nabídka — Malba" [ref=e15] [cursor=pointer]:
+        - /url: malba.html
+      - link "Nabídka — Stěrka" [ref=e16] [cursor=pointer]:
+        - /url: sterka.html
+      - link "Nabídka — Zlacení" [ref=e17] [cursor=pointer]:
+        - /url: zlaceni.html
+    - link "O nás" [ref=e18] [cursor=pointer]:
+      - /url: o-nas.html
+    - link "Historie" [ref=e19] [cursor=pointer]:
+      - /url: historie.html
+    - link "Kontakt" [ref=e20] [cursor=pointer]:
+      - /url: index.html#kontakt
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - link "Domů" [ref=e24] [cursor=pointer]:
+          - /url: index.html
+        - generic [ref=e25]: /
+        - link "Nabídka" [ref=e26] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e27]: /
+        - text: Decor
+      - heading "Dekorativní a umělecké stěny." [level=1] [ref=e28]:
+        - text: Dekorativní a
+        - emphasis [ref=e29]: umělecké
+        - text: stěny.
+      - generic [ref=e30]:
+        - paragraph [ref=e31]: Autorské motivy, freskové techniky a velkoformátové malby pro reprezentativní prostory. Každá stěna je jedinečné umělecké dílo — navrhujeme ji společně s vámi od první skici po hotovou realizaci.
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e34]: Oblast
+            - generic [ref=e35]: Interiér & exteriér
+          - generic [ref=e36]:
+            - generic [ref=e37]: Typická plocha
+            - generic [ref=e38]: 4–200 m²
+          - generic [ref=e39]:
+            - generic [ref=e40]: Doba realizace
+            - generic [ref=e41]: 3 dny – 6 týdnů
+    - generic [ref=e43]:
+      - img "Dekorativní stěna s ruční malbou" [ref=e46]
+      - generic [ref=e47]:
+        - generic [ref=e48]: 01 — Dekorativní
+        - heading "Dekorativní povrchy a vzory." [level=2] [ref=e50]:
+          - text: Dekorativní
+          - emphasis [ref=e51]: povrchy
+          - text: a vzory.
+        - paragraph [ref=e52]: Ornamentální a geometrické vzory, rastrové dekory, trompe-l'œil efekty. Tato technika kombinuje tradiční šablonový tisk s ručním přetíráním a patinováním. Výsledek je povrch, který na první pohled vypadá jako tkanina, tapeta nebo architektonický reliéf.
+        - link "Domluvit konzultaci" [ref=e53] [cursor=pointer]:
+          - /url: index.html#kontakt
+          - text: Domluvit konzultaci
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]: Galerie
+          - heading "Ukázky dekorativních prací." [level=2] [ref=e60]:
+            - text: Ukázky dekorativních
+            - emphasis [ref=e61]: prací
+            - text: .
+        - paragraph [ref=e62]: Realizace z privátních rezidencí, hotelů a komerčních prostor. Každý projekt je originál přizpůsobený konkrétnímu prostoru a přání klienta.
+      - generic [ref=e63]:
+        - generic [ref=e64] [cursor=pointer]:
+          - img "Dekorativní povrch v salónu" [ref=e66]
+          - generic [ref=e67]: Praha
+        - generic [ref=e68] [cursor=pointer]:
+          - img "Ručně dekorovaný interiér" [ref=e70]
+          - generic [ref=e71]: Brno
+        - generic [ref=e72] [cursor=pointer]:
+          - img "Detail dekorativního povrchu" [ref=e74]
+          - generic [ref=e75]: Vídeň
+        - generic [ref=e76] [cursor=pointer]:
+          - img "Ručně malovaný vstupní prostor" [ref=e78]
+          - generic [ref=e79]: Praha
+        - generic [ref=e80] [cursor=pointer]:
+          - img "Dekorativní stěna v obytném prostoru" [ref=e82]
+          - generic [ref=e83]: Mnichov
+    - generic [ref=e85]:
+      - img "Umělecká malba na stěně" [ref=e88]
+      - generic [ref=e89]:
+        - generic [ref=e90]: 02 — Umělecká
+        - heading "Velkoformátové umělecké malby." [level=2] [ref=e92]:
+          - text: Velkoformátové
+          - emphasis [ref=e93]: umělecké
+          - text: malby.
+        - paragraph [ref=e94]: Autorské kompozice, figurativní i abstraktní malby přímo na omítku nebo speciální podklad. Spolupracujeme s architekty a interiérovými designéry — nebo přímo s investorem. Každý motiv vzniká na míru prostoru, jeho světlu a charakteru.
+        - link "Domluvit konzultaci" [ref=e95] [cursor=pointer]:
+          - /url: index.html#kontakt
+          - text: Domluvit konzultaci
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]: Galerie
+          - heading "Ukázky uměleckých maleb." [level=2] [ref=e102]:
+            - text: Ukázky uměleckých
+            - emphasis [ref=e103]: maleb
+            - text: .
+        - paragraph [ref=e104]: Autorské malby v hotelech, rezidencích a komerčních prostorách. Od intimních formátů po velkoformátové realizace přes stovky m².
+      - generic [ref=e105]:
+        - generic [ref=e106] [cursor=pointer]:
+          - img "Fresková malba v hotelu" [ref=e108]
+          - generic [ref=e109]: Hotel · Vídeň
+        - generic [ref=e110] [cursor=pointer]:
+          - img "Abstraktní dekorativní malba" [ref=e112]
+          - generic [ref=e113]: Rezidence · Praha
+        - generic [ref=e114] [cursor=pointer]:
+          - img "Velkoformátová umělecká malba" [ref=e116]
+          - generic [ref=e117]: Volterra
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - generic [ref=e121]: Jak pracujeme
+          - heading "Postup realizace." [level=2] [ref=e123]:
+            - text: Postup
+            - emphasis [ref=e124]: realizace
+            - text: .
+        - paragraph [ref=e125]: Od prvního setkání po předání hotového díla — transparentní proces s jasnou komunikací v každé fázi.
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: Krok 01
+          - heading "Konzultace" [level=4] [ref=e129]
+          - paragraph [ref=e130]: Bezplatná schůzka na místě realizace. Diskuze o stylu, materiálech a barevnosti. Prohlídka vzorníků a referenčních fotografií.
+        - generic [ref=e131]:
+          - generic [ref=e132]: Krok 02
+          - heading "Návrh a skica" [level=4] [ref=e133]
+          - paragraph [ref=e134]: Vytvoříme grafický návrh nebo skicu motivu v měřítku. U větších projektů i barevnou studii s vizualizací v prostoru.
+        - generic [ref=e135]:
+          - generic [ref=e136]: Krok 03
+          - heading "Příprava podkladu" [level=4] [ref=e137]
+          - paragraph [ref=e138]: Správná příprava omítky, penetrace a případné tmelení. Základ je klíčový pro výslednou kvalitu a trvanlivost povrchu.
+        - generic [ref=e139]:
+          - generic [ref=e140]: Krok 04
+          - heading "Realizace a předání" [level=4] [ref=e141]
+          - paragraph [ref=e142]: Ruční provedení v dohodnutém termínu. Finální ochranné nátěry, úklid pracoviště a předávací protokol se zárukou.
+    - generic [ref=e144]:
+      - heading "Máte projekt? Pojďme si promluvit." [level=3] [ref=e145]:
+        - text: Máte projekt?
+        - emphasis [ref=e146]: Pojďme si promluvit.
+      - link "Domluvit konzultaci" [ref=e147] [cursor=pointer]:
+        - /url: index.html#kontakt
+        - text: Domluvit konzultaci
+    - contentinfo [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - img "Wall Decor Art" [ref=e153]
+            - paragraph [ref=e154]: Rodinné studio dekorativních povrchů. Mezinárodní projekty v residenčním i komerčním sektoru. Od roku 1996.
+          - generic [ref=e155]:
+            - heading "Stránky" [level=4] [ref=e156]
+            - list [ref=e157]:
+              - listitem [ref=e158]:
+                - link "Domů" [ref=e159] [cursor=pointer]:
+                  - /url: index.html
+              - listitem [ref=e160]:
+                - link "O nás" [ref=e161] [cursor=pointer]:
+                  - /url: o-nas.html
+              - listitem [ref=e162]:
+                - link "Historie" [ref=e163] [cursor=pointer]:
+                  - /url: historie.html
+              - listitem [ref=e164]:
+                - link "Kontakt" [ref=e165] [cursor=pointer]:
+                  - /url: index.html#kontakt
+          - generic [ref=e166]:
+            - heading "Nabídka" [level=4] [ref=e167]
+            - list [ref=e168]:
+              - listitem [ref=e169]:
+                - link "Decor" [ref=e170] [cursor=pointer]:
+                  - /url: decor.html
+              - listitem [ref=e171]:
+                - link "Malba" [ref=e172] [cursor=pointer]:
+                  - /url: malba.html
+              - listitem [ref=e173]:
+                - link "Stěrka" [ref=e174] [cursor=pointer]:
+                  - /url: sterka.html
+              - listitem [ref=e175]:
+                - link "Zlacení" [ref=e176] [cursor=pointer]:
+                  - /url: zlaceni.html
+          - generic [ref=e177]:
+            - heading "Kontakt" [level=4] [ref=e178]
+            - list [ref=e179]:
+              - listitem [ref=e180]:
+                - link "+420 732 333 550" [ref=e181] [cursor=pointer]:
+                  - /url: tel:+420732333550
+              - listitem [ref=e182]:
+                - link "mailhospodarsky@gmail.com" [ref=e183] [cursor=pointer]:
+                  - /url: mailto:mailhospodarsky@gmail.com
+              - listitem [ref=e184]:
+                - link "Instagram" [ref=e185] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e186]:
+                - link "Facebook" [ref=e187] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e188]:
+          - generic [ref=e189]: © 1996–2026 Wall Decor Art — Všechna práva vyhrazena.
+          - generic [ref=e190]: Marek & Terezie · Praha · Brno
