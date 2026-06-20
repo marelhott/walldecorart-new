@@ -27,6 +27,35 @@
 .sub-meta-item .lbl { font-family: var(--font-ui); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-muted); margin-bottom: 4px; }
 .sub-meta-item .val { font-size: 15px; font-weight: 500; }
 @media (max-width: 1023px) { .sub-hero-lead { grid-template-columns: 1fr; gap: 32px; } }
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto 56px;
+}
+.fact-card {
+  padding: 22px 20px;
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  background: #fff;
+}
+.fact-card .lbl {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--c-muted);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.fact-card .val {
+  color: var(--c-text);
+  font-size: 15px;
+  line-height: 1.55;
+}
+@media (max-width: 1023px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .facts-grid { grid-template-columns: 1fr; } }
 
 /* GALLERY SECTION */
 .gallery-section {
@@ -379,8 +408,22 @@
   color: var(--c-warm);
   font-style: italic;
 }
+/* decor-identity-art: wide(7) + dark(5) / detail(7) + textline(5) */
 .decor-identity-art .decor-feature {
   grid-column: span 5;
+}
+.decor-identity-art .decor-feature-image-detail {
+  grid-column: 1 / span 7;
+  min-height: clamp(320px, 30vw, 440px);
+}
+.decor-identity-art .decor-textline:not(.decor-textline-full) {
+  grid-column: 8 / span 5;
+  align-self: center;
+  margin: 0;
+}
+/* When detail image is missing, textline spans full width */
+.decor-identity-art .decor-textline-full {
+  grid-column: 1 / -1;
 }
 .decor-identity-process .decor-feature {
   grid-column: span 6;
@@ -395,12 +438,9 @@
 }
 .decor-masonry {
   --decor-gallery-gap: 14px;
-  position: relative;
-  display: block;
-}
-.decor-masonry:not(.is-masonry) {
-  column-count: 3;
-  column-gap: var(--decor-gallery-gap);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--decor-gallery-gap);
 }
 .decor-masonry-process {
   max-width: none;
@@ -408,34 +448,45 @@
 }
 .decor-photo {
   display: block;
-  margin: 0 0 var(--decor-gallery-gap);
+  position: relative;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 12px;
   background: #e7e2d7;
+  aspect-ratio: 4 / 5;
+  cursor: zoom-in;
+  box-shadow: var(--shadow-1);
 }
-.decor-masonry:not(.is-masonry) .decor-photo {
-  break-inside: avoid;
-}
-.decor-masonry.is-masonry .decor-photo {
+.decor-photo::after {
+  content: "Zvetsit";
   position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  will-change: transform;
+  right: 14px;
+  bottom: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  color: var(--c-text);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .24s ease, transform .24s ease;
 }
 .decor-photo img {
   width: 100%;
-  height: auto;
-  display: block;
-  transition: transform .8s ease, filter .8s ease;
-}
-.decor-masonry.is-masonry .decor-photo img {
   height: 100%;
+  display: block;
   object-fit: cover;
+  transition: transform .8s ease, filter .8s ease;
 }
 .decor-photo:hover img {
   transform: scale(1.025);
   filter: saturate(1.04);
+}
+.decor-photo:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 @media (max-width: 1023px) {
   .decor-original-section {
@@ -483,7 +534,7 @@
   }
   .decor-masonry,
   .decor-masonry-process {
-    column-count: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .decor-statement {
     grid-template-columns: 1fr;
@@ -542,7 +593,10 @@
   }
   .decor-masonry,
   .decor-masonry-process {
-    column-count: 1;
+    grid-template-columns: 1fr;
+  }
+  .decor-photo {
+    aspect-ratio: 4 / 3;
   }
   .decor-statement {
     padding: 22px 0;

@@ -109,6 +109,9 @@
       const index = cards.indexOf(entry.target);
       window.setTimeout(() => {
         entry.target.classList.add('project-in');
+        entry.target.querySelectorAll('.clip-reveal').forEach((el, ci) => {
+          window.setTimeout(() => el.classList.add('in'), 80 + ci * 60);
+        });
       }, Math.max(index, 0) * 120);
       io.unobserve(entry.target);
     });
@@ -165,16 +168,68 @@
   const rows = document.querySelectorAll('.service-row');
   const imgs = document.querySelectorAll('.services-img-inner .ph');
   if (!rows.length) return;
+  const activate = (row, i) => {
+    rows.forEach(r => r.classList.remove('active'));
+    row.classList.add('active');
+    rows.forEach(r => r.setAttribute('aria-expanded', String(r === row)));
+    imgs.forEach((img, j) => img.classList.toggle('hide', j !== i));
+  };
   rows.forEach((row, i) => {
+    row.tabIndex = 0;
+    row.setAttribute('role', 'button');
+    row.setAttribute('aria-expanded', 'false');
     row.addEventListener('click', () => {
-      rows.forEach(r => r.classList.remove('active'));
-      row.classList.add('active');
-      imgs.forEach((img, j) => img.classList.toggle('hide', j !== i));
+      activate(row, i);
+    });
+    row.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      activate(row, i);
     });
   });
   // activate first by default
-  if (rows[0]) rows[0].classList.add('active');
+  if (rows[0]) activate(rows[0], 0);
   imgs.forEach((img, j) => j !== 0 && img.classList.add('hide'));
+})();
+
+// Contact form -> prepares an email draft instead of faking submission
+(() => {
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+  const status = form.querySelector('[data-form-status]');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const phone = String(data.get('phone') || '').trim();
+    const location = String(data.get('location') || '').trim();
+    const technique = String(data.get('technique') || '').trim();
+    const message = String(data.get('message') || '').trim();
+    const fileInput = form.querySelector('input[type="file"]');
+    const files = fileInput?.files ? [...fileInput.files] : [];
+    const subject = `Poptavka Wall Decor Art - ${name || 'novy projekt'}`;
+    const lines = [
+      `Jmeno: ${name}`,
+      `E-mail: ${email}`,
+      `Telefon: ${phone || '-'}`,
+      `Misto realizace: ${location || '-'}`,
+      `Typ realizace: ${technique || '-'}`,
+      `Fotografie k projektu: ${files.length ? files.map(file => file.name).join(', ') : '-'}`,
+      '',
+      'Popis projektu:',
+      message || '-',
+      '',
+      files.length ? 'Poznamka: Po otevreni e-mailu je potreba vybrane fotografie prilozit rucne jako prilohy.' : ''
+    ];
+    const href = `mailto:info@walldecorart.online?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    window.location.href = href;
+    if (status) {
+      status.textContent = files.length
+        ? 'Oteviram e-mail s predvyplnenou poptavkou. Vybrane fotografie potom v e-mailu jeste pripojte rucne jako prilohy.'
+        : 'Oteviram e-mail s predvyplnenou poptavkou. Pokud se nic nestane, zavolejte nebo napiste primo.';
+    }
+  });
 })();
 
 // Duplicate marquee tracks for seamless loop
@@ -183,67 +238,6 @@
     const items = [...track.children];
     items.forEach(item => track.appendChild(item.cloneNode(true)));
   });
-})();
-
-// Wix-like masonry gallery: equal gutters, original image ratios, packed columns.
-(() => {
-  const galleries = [...document.querySelectorAll('.decor-masonry')];
-  if (!galleries.length) return;
-
-  const getColumnCount = gallery => {
-    const width = gallery.clientWidth;
-    if (width < 640) return 1;
-    if (width < 1024) return 2;
-    return gallery.classList.contains('decor-masonry-process') ? 3 : 3;
-  };
-
-  const layoutGallery = gallery => {
-    const items = [...gallery.querySelectorAll('.decor-photo')];
-    if (!items.length) return;
-
-    const styles = window.getComputedStyle(gallery);
-    const gap = parseFloat(styles.getPropertyValue('--decor-gallery-gap')) || 14;
-    const columns = getColumnCount(gallery);
-    const columnWidth = (gallery.clientWidth - gap * (columns - 1)) / columns;
-    const heights = Array(columns).fill(0);
-
-    gallery.classList.add('is-masonry');
-
-    items.forEach(item => {
-      const img = item.querySelector('img');
-      const ratio = img && img.naturalWidth ? img.naturalHeight / img.naturalWidth : 0.75;
-      const height = Math.max(120, columnWidth * ratio);
-      const column = heights.indexOf(Math.min(...heights));
-      const x = column * (columnWidth + gap);
-      const y = heights[column];
-
-      item.style.width = `${columnWidth}px`;
-      item.style.height = `${height}px`;
-      item.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-      heights[column] += height + gap;
-    });
-
-    gallery.style.height = `${Math.max(...heights) - gap}px`;
-  };
-
-  const layoutAll = () => galleries.forEach(layoutGallery);
-  const scheduleLayout = (() => {
-    let frame;
-    return () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(layoutAll);
-    };
-  })();
-
-  galleries.forEach(gallery => {
-    gallery.querySelectorAll('img').forEach(img => {
-      if (!img.complete) img.addEventListener('load', scheduleLayout, { once: true });
-    });
-  });
-
-  window.addEventListener('resize', scheduleLayout);
-  window.addEventListener('load', scheduleLayout);
-  scheduleLayout();
 })();
 
 // Image lightbox for content photos
@@ -328,4 +322,124 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeLightbox();
   });
+})();
+
+/* ===== Premium Animations v2 ===== */
+
+// Grain overlay inject
+(() => {
+  const el = document.createElement('div');
+  el.className = 'grain-overlay';
+  el.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(el);
+})();
+
+// Custom cursor (desktop only)
+(() => {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  const dot  = document.createElement('div');
+  dot.className  = 'cursor-dot';
+  const ring = document.createElement('div');
+  ring.className = 'cursor-ring';
+  document.body.append(dot, ring);
+
+  document.documentElement.style.cursor = 'none';
+
+  let mx = -200, my = -200, rx = -200, ry = -200;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    const active = !!e.target.closest('a, button, label, summary, [role="button"], input, textarea, select');
+    ring.classList.toggle('cursor-hover', active);
+  });
+  document.addEventListener('mousedown',  () => ring.classList.add('cursor-click'));
+  document.addEventListener('mouseup',    () => ring.classList.remove('cursor-click'));
+  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { dot.style.opacity = '';  ring.style.opacity = '';  });
+
+  (function cursorTick() {
+    rx += (mx - rx) * 0.10;
+    ry += (my - ry) * 0.10;
+    dot.style.transform  = `translate(${mx}px,${my}px)`;
+    ring.style.transform = `translate(${rx}px,${ry}px)`;
+    requestAnimationFrame(cursorTick);
+  })();
+})();
+
+// Magnetic buttons (desktop only)
+(() => {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  document.querySelectorAll('.hero-action, .btn-primary, .btn-secondary, .contact-form button').forEach(btn => {
+    let raf;
+    btn.addEventListener('mouseenter', () => { btn.style.transition = 'transform 0.05s ease'; });
+    btn.addEventListener('mousemove', e => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r  = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+        const dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+        btn.style.transform = `translate(${dx * 10}px,${dy * 8}px)`;
+      });
+    });
+    btn.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(raf);
+      btn.style.transition = 'transform 0.65s cubic-bezier(0.16,1,0.3,1)';
+      btn.style.transform  = '';
+      window.setTimeout(() => { btn.style.transition = ''; }, 700);
+    });
+  });
+})();
+
+// Word-split disabled — using .reveal fade-in for headings
+// (Cormorant Garamond + Czech diacritics caused clipping/merge issues)
+
+// 3-D tilt on cards (desktop only)
+(() => {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  const TILT = 4.5;
+  document.querySelectorAll('.services-img-inner, .testi-card, .fact-card, .contact-block').forEach(el => {
+    let raf;
+    el.addEventListener('mousemove', e => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r  = el.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width  / 2)) / (r.width  / 2);
+        const dy = (e.clientY - (r.top  + r.height / 2)) / (r.height / 2);
+        el.style.transform  = `perspective(1100px) rotateY(${dx*TILT}deg) rotateX(${-dy*TILT}deg) scale(1.012)`;
+        el.style.transition = 'transform 0.06s ease';
+      });
+    });
+    el.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(raf);
+      el.style.transition = 'transform 0.75s cubic-bezier(0.16,1,0.3,1)';
+      el.style.transform  = '';
+      window.setTimeout(() => { el.style.transition = ''; }, 800);
+    });
+  });
+})();
+
+// Clip-path reveal — pouze .proj-img na homepage (spouštěno project-in observerem)
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.proj-img').forEach(el => el.classList.add('clip-reveal'));
+})();
+
+// Hero image parallax
+(() => {
+  const heroShell = document.querySelector('.hero-shell');
+  const heroPh    = document.querySelector('.hero-img .ph');
+  if (!heroShell || !heroPh) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let raf;
+  window.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const s = window.scrollY;
+      if (s < heroShell.offsetHeight * 1.6) {
+        heroPh.style.setProperty('--parallax-y', `${s * 0.22}px`);
+      }
+    });
+  }, { passive: true });
 })();
