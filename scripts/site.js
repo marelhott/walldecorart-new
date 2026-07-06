@@ -188,33 +188,21 @@
   });
 })();
 
-// Services accordion (homepage)
+// Technique cards (homepage) — each card auto-cycles its own photo stack
 (() => {
-  const rows = document.querySelectorAll('.service-row');
-  const imgs = document.querySelectorAll('.services-img-inner .ph');
-  if (!rows.length) return;
-  const activate = (row, i) => {
-    rows.forEach(r => r.classList.remove('active'));
-    row.classList.add('active');
-    rows.forEach(r => r.setAttribute('aria-expanded', String(r === row)));
-    imgs.forEach((img, j) => img.classList.toggle('hide', j !== i));
-  };
-  rows.forEach((row, i) => {
-    row.tabIndex = 0;
-    row.setAttribute('role', 'button');
-    row.setAttribute('aria-expanded', 'false');
-    row.addEventListener('click', () => {
-      activate(row, i);
-    });
-    row.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      activate(row, i);
-    });
+  const cards = document.querySelectorAll('.tech-card-media');
+  if (!cards.length) return;
+  cards.forEach((media, ci) => {
+    const slides = media.querySelectorAll('.tech-card-slide');
+    const dots = media.querySelectorAll('.tech-card-dots span');
+    if (slides.length < 2) return;
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('is-active', j === i));
+      dots.forEach((d, j) => d.classList.toggle('is-active', j === i));
+    }, 3800 + ci * 450);
   });
-  // activate first by default
-  if (rows[0]) activate(rows[0], 0);
-  imgs.forEach((img, j) => j !== 0 && img.classList.add('hide'));
 })();
 
 // Contact form -> prepares an email draft instead of faking submission
@@ -277,7 +265,6 @@
     '.proj-img img',
     '.marquee-tile img',
     '.hero-img img',
-    '.services-img-inner img',
     '.team-photo img',
     '.tl-img img'
   ].join(',');
@@ -288,7 +275,8 @@
     '.proj-avatar',
     '.testi-card .av',
     '.logo',
-    '.decor-original-symbol'
+    '.decor-original-symbol',
+    '.tech-card'
   ].join(',');
 
   let lightbox;
@@ -446,7 +434,7 @@
 (() => {
   if (window.matchMedia('(pointer: coarse)').matches) return;
   const TILT = 4.5;
-  document.querySelectorAll('.services-img-inner, .testi-card, .fact-card, .contact-block').forEach(el => {
+  document.querySelectorAll('.tech-card-media, .testi-card, .fact-card, .contact-block').forEach(el => {
     let raf;
     el.addEventListener('mousemove', e => {
       cancelAnimationFrame(raf);

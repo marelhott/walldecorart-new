@@ -228,11 +228,11 @@ em       { font-style: italic; }
 .proj-img img,
 .marquee-tile img,
 .hero-img img,
-.services-img-inner img,
 .team-photo img,
 .tl-img img {
   cursor: zoom-in;
 }
+.tech-card img { cursor: pointer; }
 
 .site-header img,
 .site-footer img,
