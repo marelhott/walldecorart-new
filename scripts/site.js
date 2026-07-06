@@ -1,11 +1,36 @@
 // ===== Wall Decor Art — site.js =====
 
+// Stagger reveal — grids reveal per-item with a soft cascade instead of one block.
+// Must run before the reveal observer below so the new .reveal children get observed.
+(() => {
+  const containers = document.querySelectorAll([
+    '.counters', '.facts-grid', '.process-grid', '.values-grid', '.team-grid',
+    '.stats-row', '.partners-row', '.review-proof', '.decor-masonry', '.gallery-grid'
+  ].join(','));
+  containers.forEach(box => {
+    box.classList.remove('reveal', 'reveal-d1', 'reveal-d2', 'reveal-d3', 'reveal-d4');
+    [...box.children].forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.transitionDelay = `${Math.min(i * 70, 560)}ms`;
+    });
+  });
+})();
+
 // Scroll reveal
 (() => {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('in');
+      io.unobserve(el);
+      // Drop the stagger delay once the entrance is done so it never slows hover states.
+      if (el.style.transitionDelay) {
+        window.setTimeout(() => { el.style.transitionDelay = ''; }, 1600);
+      }
+    });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   els.forEach(el => io.observe(el));
 })();
@@ -279,6 +304,7 @@
     lightbox.innerHTML = `
       <button class="image-lightbox-close" type="button" aria-label="Zavřít náhled">×</button>
       <img class="image-lightbox-img" alt="" />
+      <div class="image-lightbox-caption" aria-hidden="true"></div>
     `;
     document.body.appendChild(lightbox);
 
@@ -295,6 +321,7 @@
     ensureLightbox();
     lightboxImg.src = img.currentSrc || img.src;
     lightboxImg.alt = img.alt || '';
+    lightbox.querySelector('.image-lightbox-caption').textContent = img.alt || '';
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
@@ -332,6 +359,26 @@
   el.className = 'grain-overlay';
   el.setAttribute('aria-hidden', 'true');
   document.body.appendChild(el);
+})();
+
+// Scroll progress hairline
+(() => {
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  let raf;
+  const update = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${max > 0 ? Math.min(window.scrollY / max, 1) : 0})`;
+  };
+  window.addEventListener('scroll', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(update);
+  }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
 })();
 
 // Custom cursor (desktop only)

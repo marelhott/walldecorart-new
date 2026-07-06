@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Historie Wall Decor Art od roku 1996: milníky studia, vývoj technik a cesta od prvních zakázek po současné realizace." />
   <title>Historie — Wall Decor Art</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260618-1" />
-  <link rel="stylesheet" href="styles/base.css?v=20260618-1" />
-  <link rel="stylesheet" href="styles/sub.css?v=20260618-1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260706-1" />
+  <link rel="stylesheet" href="styles/base.css?v=20260706-1" />
+  <link rel="stylesheet" href="styles/sub.css?v=20260706-1" />
   <style>
     @media (min-width: 768px) {
       .nav-links { display: flex !important; }
@@ -20,19 +22,19 @@
       width: 1px; background: var(--c-border);
     }
     .tl-item { display: grid; grid-template-columns: 120px 1fr; gap: 48px; margin-bottom: 64px; position: relative; }
-    .tl-year {
-      font-family: var(--font); font-size: clamp(28px, 3vw, 40px); font-weight: 500;
+    .tl-year { font-family: var(--font-display);
+      font-size: clamp(30px, 3.2vw, 44px); font-weight: 500;
       letter-spacing: -0.03em; color: var(--c-text-2); line-height: 1;
       text-align: right; padding-top: 4px;
     }
-    .tl-item.highlight .tl-year { color: var(--c-text); }
+    .tl-item.highlight .tl-year { color: var(--c-warm); }
     .tl-dot {
       position: absolute; left: 112px; top: 8px;
       width: 17px; height: 17px; border-radius: 999px;
       background: var(--c-bg); border: 1.5px solid var(--c-border);
       z-index: 1;
     }
-    .tl-item.highlight .tl-dot { background: var(--c-text); border-color: var(--c-text); }
+    .tl-item.highlight .tl-dot { background: var(--c-warm); border-color: var(--c-warm); box-shadow: 0 0 0 4px rgba(139,112,64,.14); }
     .tl-content { padding-top: 0; }
     .tl-content h3 { font-size: 20px; font-weight: 500; margin-bottom: 10px; letter-spacing: -0.01em; }
     .tl-content p { font-size: 15px; line-height: 1.7; color: var(--c-text-2); max-width: 600px; }
@@ -225,6 +227,6 @@
     <div class="footer-bottom"><div>© 1996–2026 Wall Decor Art — Všechna práva vyhrazena.</div><div>Marek Hospodářský · Praha · Brno</div></div>
   </div>
 </footer>
-<script src="scripts/site.js?v=20260618-1"></script>
+<script src="scripts/site.js?v=20260706-1"></script>
 </body>
 </html>
