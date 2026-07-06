@@ -20,6 +20,8 @@
     .team-card { background: #fff; border: 1px solid var(--c-border); border-radius: var(--r-card); overflow: hidden; transition: box-shadow .3s, transform .3s; }
     .team-card:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
     .team-photo { aspect-ratio: 4/3; background: #d0c8b5; }
+    .team-photo-split { display: flex; }
+    .team-photo-split .ph.photo { width: 50%; }
     .team-body { padding: 28px; }
     .team-body h3 { font-size: 22px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.01em; }
     .team-body .role { font-family: var(--font-ui); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-accent); margin-bottom: 16px; }
@@ -134,7 +136,7 @@
   </div>
   <div class="team-grid reveal reveal-d1">
     <div class="team-card">
-      <div class="team-photo"><div class="ph photo"><img src="uploads/wda-original/7b8f8b3046ea427e882a7dad15424014.jpg" alt="Ukázka práce Marka Hospodářského" loading="lazy" /></div></div>
+      <div class="team-photo"><div class="ph photo"><img src="uploads/user-uploads/marek-hospodarsky-portrait.webp" alt="Marek Hospodářský — zakladatel Wall Decor Art" loading="lazy" /></div></div>
       <div class="team-body">
         <h3>Marek Hospodářský</h3>
         <div class="role">Zakladatel &amp; hlavní realizátor</div>
@@ -142,7 +144,10 @@
       </div>
     </div>
     <div class="team-card">
-      <div class="team-photo"><div class="ph photo"><img src="uploads/wda-original/14e4fd271f3542db9e583f0b2a8b97de.jpg" alt="Ukázka práce studia Wall Decor Art" loading="lazy" /></div></div>
+      <div class="team-photo team-photo-split">
+        <div class="ph photo"><img src="uploads/user-uploads/team-specialist-man.jpg" alt="Ověřený specialista studia Wall Decor Art" loading="lazy" /></div>
+        <div class="ph photo"><img src="uploads/user-uploads/team-specialist-woman.jpg" alt="Ověřená specialistka studia Wall Decor Art" loading="lazy" /></div>
+      </div>
       <div class="team-body">
         <h3>Ověření specialisté</h3>
         <div class="role">Štuky, restaurování, nástěnné umění</div>
