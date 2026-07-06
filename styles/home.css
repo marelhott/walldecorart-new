@@ -601,19 +601,13 @@
 @media (max-width: 600px) { .counters { grid-template-columns: repeat(2,1fr); gap: 24px; } }
 
 /* SERVICES */
-#sluzby {
-  position: relative;
-  z-index: 0;
+.services-head {
+  margin-bottom: clamp(32px, 4vw, 54px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#sluzby::before {
-  content: "";
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: -1;
-  background:
-    linear-gradient(180deg, var(--c-bg) 0%, #f6f5f2 100%);
-}
-.services-head { margin-bottom: clamp(32px, 4vw, 54px); }
 .services-head .pill {
   border-color: rgba(18, 18, 22, .08);
   background: rgba(255, 255, 255, .78);
