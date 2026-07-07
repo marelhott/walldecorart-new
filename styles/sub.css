@@ -75,7 +75,8 @@
   padding: 80px 0;
   border-bottom: 1px solid var(--c-border);
 }
-.gallery-section:last-of-type { border-bottom: none; }
+.gallery-section:last-of-type,
+.gallery-section:has(+ :not(.gallery-section)) { border-bottom: none; }
 
 .gallery-head {
   display: grid; grid-template-columns: 1fr 1.4fr;

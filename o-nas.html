@@ -46,8 +46,22 @@
     @media (max-width: 767px) { .stats-row { grid-template-columns: 1fr 1fr; } .stat-item:nth-child(2) { border-right: none; } .stat-item { border-bottom: 1px solid var(--c-border); } }
 
     /* Partners marquee */
-    .partners-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 32px; }
-    .partner-tag { font-family: var(--font-ui); font-size: 13px; padding: 8px 18px; border: 1px solid var(--c-border); border-radius: 999px; color: var(--c-text-2); }
+    .partners-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 36px; }
+    .partner-tag {
+      font-family: var(--font-ui); font-size: 13px; font-weight: 500;
+      padding: 11px 22px; border-radius: 999px;
+      background: #fff; border: 1px solid var(--c-border);
+      color: var(--c-text-2);
+      box-shadow: var(--shadow-1);
+      transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s ease, color .3s ease, background .3s ease;
+    }
+    .partner-tag:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-2);
+      border-color: rgba(139,112,64,.4);
+      color: var(--c-text);
+      background: linear-gradient(180deg, #fff, #fdfbf7);
+    }
   </style>
 </head>
 <body>
