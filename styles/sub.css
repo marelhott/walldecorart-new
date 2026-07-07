@@ -2,8 +2,7 @@
 
 /* SUB HERO */
 .sub-hero {
-  padding: 72px 0 60px;
-  border-bottom: 1px solid var(--c-border);
+  padding: 72px 0 0;
 }
 .sub-crumb {
   font-family: var(--font-ui); font-size: 12px; text-transform: uppercase;
