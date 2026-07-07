@@ -46,22 +46,36 @@
     @media (max-width: 767px) { .stats-row { grid-template-columns: 1fr 1fr; } .stat-item:nth-child(2) { border-right: none; } .stat-item { border-bottom: 1px solid var(--c-border); } }
 
     /* Partners marquee */
-    .partners-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 36px; }
+    .partners-wrap {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      margin-top: 40px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .partners-row { display: flex; gap: 16px; width: max-content; animation: partners-scroll 26s linear infinite; }
+    .partners-wrap:hover .partners-row { animation-play-state: paused; }
     .partner-tag {
+      display: inline-flex; align-items: center; gap: 10px;
       font-family: var(--font-ui); font-size: 13px; font-weight: 500;
-      padding: 11px 22px; border-radius: 999px;
-      background: #fff; border: 1px solid var(--c-border);
-      color: var(--c-text-2);
-      box-shadow: var(--shadow-1);
-      transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .3s ease, color .3s ease, background .3s ease;
-    }
-    .partner-tag:hover {
-      transform: translateY(-3px);
+      letter-spacing: 0.01em;
+      padding: 13px 24px 13px 18px; border-radius: 999px;
+      background: var(--c-charcoal);
+      color: rgba(255,255,255,.9);
       box-shadow: var(--shadow-2);
-      border-color: rgba(139,112,64,.4);
-      color: var(--c-text);
-      background: linear-gradient(180deg, #fff, #fdfbf7);
+      white-space: nowrap;
+      transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
     }
+    .partner-tag::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 999px; flex-shrink: 0;
+      background: var(--c-gold);
+      box-shadow: 0 0 0 3px rgba(198,161,91,.2), 0 0 10px rgba(198,161,91,.55);
+    }
+    .partner-tag:hover { transform: translateY(-3px); box-shadow: var(--shadow-3); }
+    @keyframes partners-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   </style>
 </head>
 <body>
@@ -208,14 +222,23 @@
     </div>
     <p>Spolupracujeme s architekty, interiérovými designéry a přímými investory. Vítáme zakázky od jedné místnosti po kompletní realizace.</p>
   </div>
-  <div class="partners-row reveal reveal-d1">
-    <span class="partner-tag">Privátní rezidence</span>
-    <span class="partner-tag">Butikové hotely</span>
-    <span class="partner-tag">Kavárny &amp; restaurace</span>
-    <span class="partner-tag">Komerční interiéry</span>
-    <span class="partner-tag">Architektonická studia</span>
-    <span class="partner-tag">Designéři</span>
-    <span class="partner-tag">Developeři</span>
+  <div class="partners-wrap reveal reveal-d1">
+    <div class="partners-row">
+      <span class="partner-tag">Privátní rezidence</span>
+      <span class="partner-tag">Butikové hotely</span>
+      <span class="partner-tag">Kavárny &amp; restaurace</span>
+      <span class="partner-tag">Komerční interiéry</span>
+      <span class="partner-tag">Architektonická studia</span>
+      <span class="partner-tag">Designéři</span>
+      <span class="partner-tag">Developeři</span>
+      <span class="partner-tag">Privátní rezidence</span>
+      <span class="partner-tag">Butikové hotely</span>
+      <span class="partner-tag">Kavárny &amp; restaurace</span>
+      <span class="partner-tag">Komerční interiéry</span>
+      <span class="partner-tag">Architektonická studia</span>
+      <span class="partner-tag">Designéři</span>
+      <span class="partner-tag">Developeři</span>
+    </div>
   </div>
 </section>
 
