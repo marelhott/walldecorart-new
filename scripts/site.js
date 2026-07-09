@@ -222,26 +222,26 @@
     const message = String(data.get('message') || '').trim();
     const fileInput = form.querySelector('input[type="file"]');
     const files = fileInput?.files ? [...fileInput.files] : [];
-    const subject = `Poptavka Wall Decor Art - ${name || 'novy projekt'}`;
+    const subject = `Poptávka Wall Decor Art - ${name || 'nový projekt'}`;
     const lines = [
-      `Jmeno: ${name}`,
+      `Jméno: ${name}`,
       `E-mail: ${email}`,
       `Telefon: ${phone || '-'}`,
-      `Misto realizace: ${location || '-'}`,
+      `Místo realizace: ${location || '-'}`,
       `Typ realizace: ${technique || '-'}`,
       `Fotografie k projektu: ${files.length ? files.map(file => file.name).join(', ') : '-'}`,
       '',
       'Popis projektu:',
       message || '-',
       '',
-      files.length ? 'Poznamka: Po otevreni e-mailu je potreba vybrane fotografie prilozit rucne jako prilohy.' : ''
+      files.length ? 'Poznámka: Po otevření e-mailu je potřeba vybrané fotografie přiložit ručně jako přílohy.' : ''
     ];
     const href = `mailto:info@walldecorart.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
     window.location.href = href;
     if (status) {
       status.textContent = files.length
-        ? 'Oteviram e-mail s predvyplnenou poptavkou. Vybrane fotografie potom v e-mailu jeste pripojte rucne jako prilohy.'
-        : 'Oteviram e-mail s predvyplnenou poptavkou. Pokud se nic nestane, zavolejte nebo napiste primo.';
+        ? 'Otevírám e-mail s předvyplněnou poptávkou. Vybrané fotografie potom v e-mailu ještě připojte ručně jako přílohy.'
+        : 'Otevírám e-mail s předvyplněnou poptávkou. Pokud se nic nestane, zavolejte nebo napište přímo.';
     }
   });
 })();
