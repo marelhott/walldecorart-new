@@ -236,7 +236,7 @@
       '',
       files.length ? 'Poznamka: Po otevreni e-mailu je potreba vybrane fotografie prilozit rucne jako prilohy.' : ''
     ];
-    const href = `mailto:info@walldecorart.online?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    const href = `mailto:info@walldecorart.cz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
     window.location.href = href;
     if (status) {
       status.textContent = files.length
