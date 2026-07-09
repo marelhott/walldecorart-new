@@ -242,7 +242,7 @@ em       { font-style: italic; }
   cursor: inherit;
 }
 
-body.lightbox-open {
+body.lightbox-open, body.mobile-menu-open {
   overflow: hidden;
 }
 
@@ -504,9 +504,11 @@ body.lightbox-open {
 .menu-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 .mobile-menu {
-  position: fixed; top: 76px; left: 0; right: 0;
+  position: fixed; top: 76px; left: 0; right: 0; bottom: 0;
   background: #101014; border-top: 1px solid rgba(255,255,255,0.12);
-  padding: 24px var(--pad);
+  padding: 24px var(--pad) 40px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-110%); transition: transform .3s ease;
   z-index: 99;
 }
